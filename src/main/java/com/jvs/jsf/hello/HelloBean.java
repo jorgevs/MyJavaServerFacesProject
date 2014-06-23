@@ -1,4 +1,4 @@
-package com.jvs.jsf.controller;
+package com.jvs.jsf.hello;
 
 import java.io.Serializable;
 

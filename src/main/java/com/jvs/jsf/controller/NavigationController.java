@@ -38,14 +38,16 @@ public class NavigationController implements Serializable {
 	}
 
 	public String processPage1() {
-		return "page";
+		return "page1";
 	}
 
 	public String processPage2() {
-		return "page";
+		return "page2";
 	}
 
 	public String showPage() {
+		System.out.println("pageId: " + pageId);
+		
 		if (pageId == null) {
 			return "home";
 		}
