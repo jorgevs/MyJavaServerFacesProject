@@ -27,4 +27,8 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<lifecycle>
+		<phase-listener>com.jvs.jsf.utils.DepurationListener</phase-listener>
+	</lifecycle>
+	
 </faces-config>
