@@ -6,7 +6,12 @@
 <h:body>
 	<h2>This is Page1</h2>
 	<h:form>
-		<h:commandButton action="home?faces-redirect=true" value="Back To Home Page" />
+
+		<h:outputLabel for="age" value="Age:" />
+		<h:inputText id="age" value="#{navigationController.age}" />
+		<h:message for="age" />
+
+		<h:commandButton action="home" value="Back To Home Page" />
 	</h:form>
 </h:body>
 </html>

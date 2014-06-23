@@ -15,6 +15,16 @@ public class NavigationController implements Serializable {
 	@ManagedProperty(value = "#{param.pageId}")
 	private String pageId;
 
+	private int age = 199;
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	public String moveToPage1() {
 		return "page1";
 	}

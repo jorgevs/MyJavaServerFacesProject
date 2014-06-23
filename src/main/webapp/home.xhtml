@@ -9,9 +9,10 @@
 	<h2>Implicit Navigation</h2>
 	<hr />
 	<h:form>
+		<h:outputLabel value="#{navigationController.age}" />
+	
 		<h3>Using Managed Bean</h3>
-		<h:commandButton action="#{navigationController.moveToPage1}"
-			value="Page1" />
+		<h:commandButton action="#{navigationController.moveToPage1}" value="Page1" />
 		<h3>Using JSF outcome</h3>
 		<h:commandButton action="page2" value="Page2" />
 	</h:form>
