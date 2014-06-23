@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+			
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Scoped beans</title>
+</h:head>	
+
+<body>
+<f:view>
+	<h:form>
+		1. Request scope: <h:inputText value="#{beanRequestScope.value}" />
+		<br /><br />
+		2. View scope: <h:inputText value="#{beanViewScope.value}" />
+		<br /><br />
+		3. Session scope: <h:inputText value="#{beanSessionScope.value}" />
+		<br /><br />
+		4. Application scope: <h:inputText value="#{beanApplicationScope.value}" />
+		<br /><br />
+		
+		<br /><br />
+		<h:commandButton actionListener="#{beansScopedController.changeValues}" value="Change values" />
+		<br /><br />
+		<h:commandButton action="#{beansScopedController.changePage}" value="Change page to show values" />
+		
+		<br /><br />
+		<h3>Show values in same window:</h3>
+			
+			<br />		
+			Value request scope: <span style="background:yellow">#{beanRequestScope.value}</span>
+			<br />
+			Value view scope: <span style="background:yellow">#{beanViewScope.value}</span>
+			<br />
+			Value session scope: <span style="background:yellow">#{beanSessionScope.value}</span>
+			<br />
+			Value application scope: <span style="background:yellow">#{beanApplicationScope.value}</span>
+	</h:form>
+</f:view>
+</body>
+</html>

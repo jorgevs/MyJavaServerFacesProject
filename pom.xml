@@ -53,11 +53,11 @@
 		</dependency>
 		
 		<!-- Only Tomcat6 need this, not Tomcat7 -->
-		<!--dependency>
+		<dependency>
 			<groupId>com.sun.el</groupId>
 			<artifactId>el-ri</artifactId>
 			<version>1.0</version>
-		</dependency-->
+		</dependency>
 
 	</dependencies>
 
