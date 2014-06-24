@@ -1,4 +1,4 @@
-package com.jvs.jsf.beans.scope;
+package com.jvs.jsf.beans.sample.scopes;
 
 import java.io.Serializable;
 

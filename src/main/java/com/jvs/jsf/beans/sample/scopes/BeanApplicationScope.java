@@ -1,13 +1,13 @@
-package com.jvs.jsf.beans.scope;
+package com.jvs.jsf.beans.sample.scopes;
 
 import java.io.Serializable;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
-@ManagedBean(name = "beanRequestScope")
-@RequestScoped
-public class BeanRequestScope implements Serializable {
+@ManagedBean(name = "beanApplicationScope")
+@ApplicationScoped
+public class BeanApplicationScope implements Serializable {
 
 	private String value;
 
@@ -18,5 +18,4 @@ public class BeanRequestScope implements Serializable {
 	public void setValue(String value) {
 		this.value = value;
 	}
-
 }

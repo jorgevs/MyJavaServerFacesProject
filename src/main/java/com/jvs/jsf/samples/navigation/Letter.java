@@ -1,4 +1,4 @@
-package com.jvs.jsf.controller;
+package com.jvs.jsf.samples.navigation;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;

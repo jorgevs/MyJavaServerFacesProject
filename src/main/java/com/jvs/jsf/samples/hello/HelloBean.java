@@ -1,4 +1,4 @@
-package com.jvs.jsf.hello;
+package com.jvs.jsf.samples.hello;
 
 import java.io.Serializable;
 

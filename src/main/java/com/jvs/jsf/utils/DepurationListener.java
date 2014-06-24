@@ -12,7 +12,7 @@ public class DepurationListener implements PhaseListener {
 	private static final Logger log = LoggerFactory.getLogger(DepurationListener.class);
 
 	@Override
-	public void beforePhase(PhaseEvent event) {
+	public void beforePhase(PhaseEvent event) {		
 		log.info("BEFORE PHASE:" + event.getPhaseId().toString());
 	}
 

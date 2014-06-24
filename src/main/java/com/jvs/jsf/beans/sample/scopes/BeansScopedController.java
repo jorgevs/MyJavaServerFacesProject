@@ -1,4 +1,4 @@
-package com.jvs.jsf.beans.scope;
+package com.jvs.jsf.beans.sample.scopes;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
