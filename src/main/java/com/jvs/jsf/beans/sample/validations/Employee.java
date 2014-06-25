@@ -1,6 +1,7 @@
 package com.jvs.jsf.beans.sample.validations;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -11,7 +12,13 @@ public class Employee implements Serializable {
 
 	private String name = "Insert your name";
 	private String lastName = "Insert your last name";
-	private String desiredSalary = "Insert your desired salary";
+	private int desiredSalary = 1500;
+	private Date birthDate;
+
+	private String city = "";
+	private String colony = "";
+	private String zip = "";
+	private String comments = "Insert here your comments...";
 
 	public String getName() {
 		return name;
@@ -29,11 +36,51 @@ public class Employee implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public String getDesiredSalary() {
+	public int getDesiredSalary() {
 		return desiredSalary;
 	}
 
-	public void setDesiredSalary(String desiredSalary) {
+	public void setDesiredSalary(int desiredSalary) {
 		this.desiredSalary = desiredSalary;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getColony() {
+		return colony;
+	}
+
+	public void setColony(String colony) {
+		this.colony = colony;
+	}
+
+	public String getZip() {
+		return zip;
+	}
+
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
 	}
 }

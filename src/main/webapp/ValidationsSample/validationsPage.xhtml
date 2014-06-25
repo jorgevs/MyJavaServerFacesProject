@@ -12,34 +12,89 @@
 <h:body>
 <f:view>
 	
-	<h:form>
+	<h:form id="vacancyForm">
 		<h:messages globalOnly="true" />
 	
 		<table border="1">
 			<tbody>
 				<tr>
-					<td><h:outputLabel for="name" value="Name:" /></td>
+					<td><h:outputLabel for="name" value="#{msgs['validationForm.name']}" /></td>
 					<td><h:inputText id="name" value="#{vacancyForm.emp.name}" required="true" /></td>
 					<td><h:message for="name"></h:message></td>
 				</tr>
 				<tr>
-					<td><h:outputLabel for="lastName" value="Last name:" /></td>
+					<td><h:outputLabel for="lastName" value="#{msgs['validationForm.lastName']}" /></td>
 					<td><h:inputText id="lastName" value="#{vacancyForm.emp.lastName}" required="true" /></td>
 					<td><h:message for="lastName"></h:message></td>
 				</tr>
 				<tr>
-					<td><h:outputLabel for="desidedSalary" value="Desired salary:" /></td>
-					<td><h:inputText id="desidedSalary" value="#{vacancyForm.emp.desiredSalary}" required="true">
+					<td><h:outputLabel for="desidedSalary" value="#{msgs['validationForm.desidedSalary']}" /></td>
+					<td>
+						<h:inputText id="desidedSalary" value="#{vacancyForm.emp.desiredSalary}" required="true">
 							<f:validateLongRange minimum="1000" maximum="50000"/>
 						</h:inputText>
 					</td>
 					<td><h:message for="desidedSalary"></h:message></td>
-				</tr>							
-			</tbody>
+				</tr>
+				<tr>
+					<td><h:outputLabel for="birthDate" value="#{msgs['validationForm.birthDate']}" /></td>
+					<td>
+						<h:inputText id="birthDate" value="#{vacancyForm.emp.birthDate}" required="true">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:inputText>					
+					</td>
+					<td><h:message for="birthDate"></h:message></td>
+				</tr>
+				
+				<tr>
+					<td><h:outputLabel for="city" value="#{msgs['validationForm.city']}" /></td>
+					<td><h:inputText id="city" value="#{vacancyForm.emp.city}" required="true" /></td>
+					<td><h:message for="city"></h:message></td>
+				</tr>				
+				<tr>
+					<td><h:outputLabel for="colony" value="#{msgs['validationForm.colony']}" /></td>
+					<td><h:inputText id="colony" value="#{vacancyForm.emp.colony}" required="true" /></td>
+					<td><h:message for="colony"></h:message></td>
+				</tr>
+				<tr>
+					<td><h:outputLabel for="zip" value="#{msgs['validationForm.zip']}" /></td>
+					<td>
+						<h:inputText id="zip" value="#{vacancyForm.emp.zip}" required="true" 
+									 immediate="true" onchange="this.form.submit()" 
+									 valueChangeListener="#{vacancyForm.zipListener}">
+						</h:inputText>
+					</td>
+					<td><h:message for="zip"></h:message></td>
+				</tr>																
+			</tbody>			
 		</table>
 		
+		<table border="0">
+			<tbody>
+				<tr>
+					<td><h:commandLink value="#{msgs['validationForm.show']}" actionListener="#{vacancyForm.hideComments}" immediate="true"	rendered="#{!vacancyForm.sentComment}"/></td>
+				</tr>
+				<tr>
+					<td><h:commandLink value="#{msgs['validationForm.hide']}" actionListener="#{vacancyForm.hideComments}" immediate="true"	rendered="#{vacancyForm.sentComment}"/></td>
+				</tr>
+			</tbody>
+		</table>
+							
+		<h:panelGroup rendered="#{vacancyForm.sentComment}">
+			<table border="0">
+				<tbody>
+					<tr>
+						<td><h:outputLabel for="comments" value="#{msgs['validationForm.comments']}" /></td>
+					</tr>
+					<tr>
+						<td><h:inputTextarea id="comments" cols="50" rows="10" value="#{vacancyForm.emp.comments}" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</h:panelGroup>
+		
 		<br />
-		<h:commandButton action="#{vacancyForm.send}" value="Send" />
+		<h:commandButton action="#{vacancyForm.send}" value="#{msgs['validationForm.send']}" />
 	</h:form>
 	
 	<h:form>

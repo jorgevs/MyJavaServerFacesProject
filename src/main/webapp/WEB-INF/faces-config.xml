@@ -7,10 +7,17 @@
 	<application>
 		<locale-config>
 			<default-locale>en</default-locale>
+			<supported-locale>es</supported-locale>
 			<supported-locale>en</supported-locale>
-			<supported-locale>en_US</supported-locale>
 		</locale-config>
-		<!--message-bundle>my.company.Messages</message-bundle -->
+		
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+		
+		<message-bundle>validationMsgs</message-bundle>
+		
 	</application>
 
 	<navigation-rule>
