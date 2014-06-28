@@ -19,6 +19,9 @@ public class VacancyForm {
 	@ManagedProperty(value = "#{employee}")
 	private Employee emp;
 
+	@ManagedProperty(value = "#{colonyHelper}")
+	private ColonyHelper colonyHelper;
+
 	private boolean sentComment = false;
 
 	public String send() {
@@ -49,21 +52,18 @@ public class VacancyForm {
 		UIViewRoot uiViewRoot = facesContext.getViewRoot();
 		String newZip = (String) event.getNewValue();
 
-		if ("50170".equals(newZip)) {
-			UIInput cityInputText = (UIInput) uiViewRoot.findComponent("vacancyForm:city");
-			String city = "Toluca";
-			cityInputText.setValue(city);
-			cityInputText.setSubmittedValue(city);
+		UIInput cityInputText = (UIInput) uiViewRoot.findComponent("vacancyForm:city");
+		String city = "DF";
+		cityInputText.setValue(city);
+		cityInputText.setSubmittedValue(city);
 
-			UIInput colonyInputText = (UIInput) uiViewRoot.findComponent("vacancyForm:colony");
-			String colony = "Las Haciendas";
-			colonyInputText.setValue(colony);
-			colonyInputText.setSubmittedValue(colony);
+		UIInput colonyInputText = (UIInput) uiViewRoot.findComponent("vacancyForm:colonyId");
+		Long colonyId = this.getColonyHelper().getColonyByZip(Long.parseLong(newZip));
+		colonyInputText.setValue(colonyId);
+		colonyInputText.setSubmittedValue(colonyId);
 
-			// Goes directly to the 6th JSF Phase
-			facesContext.renderResponse();
-		}
-
+		// Goes directly to the 6th JSF Phase
+		facesContext.renderResponse();
 	}
 
 	public void hideComments(ActionEvent event) {
@@ -85,7 +85,15 @@ public class VacancyForm {
 	public void setSentComment(boolean sentComment) {
 		this.sentComment = sentComment;
 		FacesContext facesContext = FacesContext.getCurrentInstance();
-	    FacesContextHelper.cleanImmediateFacesMessages(facesContext);
+		FacesContextHelper.cleanImmediateFacesMessages(facesContext);
+	}
+
+	public ColonyHelper getColonyHelper() {
+		return colonyHelper;
+	}
+
+	public void setColonyHelper(ColonyHelper colonyHelper) {
+		this.colonyHelper = colonyHelper;
 	}
 
 }

@@ -16,7 +16,7 @@ public class Employee implements Serializable {
 	private Date birthDate;
 
 	private String city = "";
-	private String colony = "";
+	private long colonyId = 0;
 	private String zip = "";
 	private String comments = "Insert here your comments...";
 
@@ -60,14 +60,6 @@ public class Employee implements Serializable {
 		this.city = city;
 	}
 
-	public String getColony() {
-		return colony;
-	}
-
-	public void setColony(String colony) {
-		this.colony = colony;
-	}
-
 	public String getZip() {
 		return zip;
 	}
@@ -82,5 +74,13 @@ public class Employee implements Serializable {
 
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+
+	public long getColonyId() {
+		return colonyId;
+	}
+
+	public void setColonyId(long colonyId) {
+		this.colonyId = colonyId;
 	}
 }
