@@ -15,7 +15,7 @@
 		<servlet-version>2.5</servlet-version>
 		<jsp-api-version>2.1</jsp-api-version>
 		<jstl-version>1.2</jstl-version>
-		<jsf-version>2.1.7</jsf-version>
+		<jsf-version>2.1.9</jsf-version>
 		<el-ri-version>1.0</el-ri-version>
 		<mysql.version>5.1.10</mysql.version>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
@@ -52,8 +52,20 @@
 			<version>${jstl-version}</version>
 		</dependency>
 
-		<!-- JSF MyFaces -->
+		<!-- JSF Apache Myfaces -->
+		<!--dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-api</artifactId>
+			<version>${jsf-version}</version>
+		</dependency>
 		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-impl</artifactId>
+			<version>${jsf-version}</version>
+		</dependency-->
+
+		<!-- JSF Mojarra Faces - Old styled -->
+		<!--dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>${jsf-version}</version>
@@ -62,7 +74,20 @@
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>${jsf-version}</version>
+		</dependency-->
+
+		<!-- JSF Mojarra Faces - New styled -->
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>javax.faces-api</artifactId>
+			<version>2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>${jsf-version}</version>
+		</dependency>
+
 
 		<!-- Only Tomcat6 need this, not Tomcat7 -->
 		<dependency>
