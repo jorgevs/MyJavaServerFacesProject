@@ -22,7 +22,7 @@ public class BeansScopedController {
 	 */
 	public String changePage() {
 		System.out.println("Change of page...");
-		return "/ScopedBeans/showValuesPage";// showValuesPage.xhtml
+		return "showValuesPage";// showValuesPage.xhtml
 	}
 	
 }
