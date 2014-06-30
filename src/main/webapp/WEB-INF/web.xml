@@ -8,7 +8,7 @@
 
 	<!-- Welcome page -->
 	<welcome-file-list>
-		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>index.jsf</welcome-file>
 	</welcome-file-list>
 
 
@@ -32,7 +32,7 @@
 	<!-- Map these files with JSF -->
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.xhtml</url-pattern>
+		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
 
 	<session-config>

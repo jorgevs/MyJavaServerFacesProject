@@ -7,8 +7,8 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class BeanCheckPassword {
 
-	private String password = "";
-	private String pwdResult = "";
+	private String password;
+	private String pwdResult = "xx";
 
 	public String getPassword() {
 		return password;
@@ -19,7 +19,7 @@ public class BeanCheckPassword {
 	}
 
 	public String getPwdResult() {
-		if (!getPassword().isEmpty()) {
+		if (getPassword() != null && !getPassword().isEmpty()) {
 			if (getPassword().length() < 3) {
 				pwdResult = "Poor";
 			} else if (getPassword().length() < 5) {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+<h:head>
+	<title>Fail</title>
+</h:head>	
+
+<h:body>
+	
+	<h:form>	
+		Search string:		
+		<h:inputText id="searchString" value="#{searchController.searchString}" required="true"/>
+		<h:message for="searchString" />
+		<br />
+		Search engine:
+		<h:selectOneMenu value="#{searchController.searchEngine}">
+			<f:selectItems value="#{searchController.searchEngineNames}" />
+		</h:selectOneMenu>
+		<br />
+		<h:commandButton value="Search" action="#{searchController.doSearch}" />
+	</h:form>
+
+	<h:form>
+		<br /><br />
+		<h:commandLink value="return to initial home" action="#{globalNavigation.returnHome}" />		
+	</h:form>
+	
+</h:body>
+</html>
