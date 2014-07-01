@@ -13,9 +13,7 @@
 
 	<h2>Implicit Navigation</h2>
 	<hr />
-	<h:form>
-		<h:outputLabel value="#{navigationController.age}" />
-	
+	<h:form>	
 		<h3>Using Managed Bean</h3>
 		<h:commandButton action="#{navigationController.moveToPage1}" value="Page1" />
 		<h3>Using JSF outcome</h3>
@@ -33,11 +31,6 @@
 		<h:commandLink action="#{navigationController.showPage}" value="Page2">
 			<f:param name="pageId" value="2" />
 		</h:commandLink>
-		<br />
-		<h:commandLink action="#{navigationController.showPage}" value="Home">
-			<f:param name="pageId" value="3" />
-		</h:commandLink>
-		<br />
 	</h:form>
 	
 	<br />

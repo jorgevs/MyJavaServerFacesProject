@@ -15,15 +15,6 @@ public class NavigationController implements Serializable {
 	@ManagedProperty(value = "#{param.pageId}")
 	private String pageId;
 
-	private int age = 199;
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
 
 	public String moveToPage1() {
 		return "page1";
@@ -38,19 +29,16 @@ public class NavigationController implements Serializable {
 	}
 
 	public String processPage1() {
-		return "page1";
+		return "page";
 	}
 
 	public String processPage2() {
-		return "page2";
+		return "page";
 	}
 
 	public String showPage() {
 		System.out.println("pageId: " + pageId);
-		
-		if (pageId == null) {
-			return "home";
-		}
+			
 		if (pageId.equals("1")) {
 			return "page1";
 		} else if (pageId.equals("2")) {

@@ -22,10 +22,9 @@ public class SearchController {
 
 		searchString = URLEncoder.encode(searchString, "utf-8");
 		String searchURL = SearchUtilities.makeURL(searchEngine, searchString);
-
-		ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
 		System.out.println("searchURL: " + searchURL);		
 		
+		ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();			
 		HttpServletResponse response = (HttpServletResponse) context.getResponse();
 		response.sendRedirect(searchURL);
 		return null;

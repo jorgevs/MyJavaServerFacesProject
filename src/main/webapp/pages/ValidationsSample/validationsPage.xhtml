@@ -10,6 +10,7 @@
 </h:head>	
 
 <h:body>
+<f:view locale="#{languageBean.localeCode}">
 	
 	<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" template="/templates/layout.xhtml">
  	    <ui:define name="content">
@@ -112,5 +113,6 @@
 		</ui:define>
 	</ui:composition>
 		
+</f:view>
 </h:body>
 </html>
