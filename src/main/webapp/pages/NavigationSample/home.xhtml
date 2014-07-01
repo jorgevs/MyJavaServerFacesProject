@@ -10,6 +10,7 @@
 </h:head>	
 
 <h:body>
+<f:view locale="#{languageBean.localeCode}">
 
 	<h2>Implicit Navigation</h2>
 	<hr />
@@ -58,6 +59,7 @@
 		<br /><br />
 		<h:commandLink value="return to initial home" action="#{globalNavigation.returnHome}" />
 	</h:form>
-	
+
+</f:view>
 </h:body>
 </html>

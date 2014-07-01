@@ -9,8 +9,8 @@
 	<title>JSF project samples</title>
 </h:head>		
 
-<body>
-<f:view>
+<h:body>
+<f:view locale="#{languageBean.localeCode}">
 	
 	<h:form>
 		<h:commandButton value="Hello world sample" action="/pages/HelloSample/hello" />
@@ -29,5 +29,5 @@
 	</h:form>
 	
 </f:view>
-</body>
+</h:body>
 </html>

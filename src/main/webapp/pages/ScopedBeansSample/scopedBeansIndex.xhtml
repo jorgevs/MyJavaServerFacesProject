@@ -9,8 +9,9 @@
 	<title>Scoped beans</title>
 </h:head>	
 
-<body>
-<f:view>
+<h:body>
+<f:view locale="#{languageBean.localeCode}">
+
 	<h:form>
 		1. Request scope: <h:inputText value="#{beanRequestScope.value}" />
 		<br /><br />
@@ -45,5 +46,5 @@
 	</h:form>
 	
 </f:view>
-</body>
+</h:body>
 </html>

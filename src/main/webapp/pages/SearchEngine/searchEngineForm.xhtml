@@ -9,7 +9,8 @@
 </h:head>	
 
 <h:body>
-	
+<f:view locale="#{languageBean.localeCode}">
+
 	<h:form>	
 		Search string:		
 		<h:inputText id="searchString" value="#{searchController.searchString}" required="true"/>
@@ -28,5 +29,6 @@
 		<h:commandLink value="return to initial home" action="#{globalNavigation.returnHome}" />		
 	</h:form>
 	
+</f:view>
 </h:body>
 </html>

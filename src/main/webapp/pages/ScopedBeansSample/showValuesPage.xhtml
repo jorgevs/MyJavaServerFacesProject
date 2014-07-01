@@ -9,8 +9,8 @@
 	<title>Show values</title>
 </h:head>	
 
-<body>
-<f:view>
+<h:body>
+<f:view locale="#{languageBean.localeCode}">
 
 <h:form>
 	Value request scope: <span style="background:yellow">#{beanRequestScope.value}</span>
@@ -27,5 +27,5 @@
 </h:form>
 
 </f:view>
-</body>
+</h:body>
 </html>
