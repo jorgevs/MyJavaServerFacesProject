@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Validation Form Sample</title>
+</h:head>	
+
+<h:body>
+<f:view locale="#{languageBean.localeCode}">
+	
+	<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" template="/templates/layout.xhtml">
+ 	    <ui:define name="content">
+ 	    	
+			<h:form id="validationForm">
+				<h:messages globalOnly="true" />
+			
+				<table border="1">
+					<tbody>
+						<tr>
+							<td>Name: <h:inputText id="name" value="#{validationForm.name}" required="true" /></td>
+							<td><h:message for="name" /></td>
+						</tr>
+						<tr>
+							<td>Last name: <h:inputText id="lastName" value="#{validationForm.lastName}" required="true" /></td>
+							<td><h:message for="lastName" /></td>
+						</tr>
+						<tr>
+							<td>Age: <h:inputText id="age" value="#{validationForm.age}" required="true" /></td>
+							<td><h:message for="age" /></td>
+						</tr>
+						<tr>
+							<td>Phone number: <h:inputText id="phoneNumber" value="#{validationForm.phoneNumber}" /></td>
+							<td><h:message for="phoneNumber" /></td>
+						</tr>
+						<tr>
+							<td>Address: <h:inputText id="address" value="#{validationForm.address}" /></td>
+							<td><h:message for="address" /></td>
+						</tr>						
+						<tr>
+							<td>Email: <h:inputText id="email" value="#{validationForm.email}" /></td>
+							<td><h:message for="email" /></td>
+						</tr>
+						<tr>
+							<td>Password: <h:inputSecret id="password" value="#{validationForm.password}" /></td>
+							<td><h:message for="password" /></td>
+						</tr>
+						<tr>
+							<td>
+								birthDate: 
+								<h:inputText id="birthDate" value="#{validationForm.birthDate}" >
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</h:inputText>
+							</td>
+							<td><h:message for="birthDate" /></td>
+						</tr>
+						<tr>
+							<td>Comments: <h:inputTextarea rows="3" cols="20" id="comments" value="#{validationForm.comments}" /></td>
+							<td><h:message for="comments" /></td>
+						</tr>
+						<tr>
+							<td>Hidden: <h:inputHidden id="hidden" value="#{validationForm.hidden}" /></td>
+							<td><h:graphicImage url="#{resource['images/USA.jpg']}" height="20%" width="20%" /></td>
+						</tr>
+						
+						<tr>
+							<td>Output format: <h:outputFormat id="output" value="{0} was a good {1}" >
+								<f:param value="#{validationForm.birthDate}" />
+								<f:param value="#{validationForm.hidden}" />
+							</h:outputFormat>
+							</td>
+							<td><h:message for="output" /></td>
+						</tr>													
+					</tbody>			
+				</table>
+				
+				<br />
+				<h:commandButton action="#{validationForm.send}" value="Send" />
+			</h:form>
+			
+			<br /><br />
+			<h:outputLink value="http://google.com">Goto google</h:outputLink>
+			
+			<br /><br />
+			<h:link value="return to initial home" outcome="homePage" />
+	
+		</ui:define>
+	</ui:composition>
+		
+</f:view>
+</h:body>
+</html>

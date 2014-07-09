@@ -105,10 +105,8 @@
 				<h:commandButton action="#{vacancyForm.send}" value="#{msgs['validationForm.send']}" />
 			</h:form>
 			
-			<h:form>
-				<br /><br />
-				<h:commandLink value="return to initial home" action="#{globalNavigation.returnHome}" />
-			</h:form>
+			<br /><br />
+			<h:link value="return to initial home" outcome="homePage" />
 	
 		</ui:define>
 	</ui:composition>

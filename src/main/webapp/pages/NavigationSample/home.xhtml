@@ -55,10 +55,8 @@
 		<h:commandButton action="page1?faces-redirect=true" value="Page1" />
 	</h:form>
 	
-	<h:form>
-		<br /><br />
-		<h:commandLink value="return to initial home" action="#{globalNavigation.returnHome}" />
-	</h:form>
+	<br /><br />
+	<h:link value="return to initial home" outcome="homePage" />
 
 </f:view>
 </h:body>

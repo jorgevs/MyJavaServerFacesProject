@@ -7,8 +7,8 @@ import javax.faces.bean.ManagedBean;
 @ApplicationScoped
 public class GlobalNavigation {
 
-	public String returnHome(){
+	/*public String returnHome(){
 		return "/index";
-	}
+	}*/
 	
 }

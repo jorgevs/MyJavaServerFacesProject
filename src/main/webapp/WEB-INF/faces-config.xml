@@ -10,19 +10,27 @@
 			<supported-locale>en</supported-locale>
 			<supported-locale>es</supported-locale>
 		</locale-config>
-		
+
 		<resource-bundle>
 			<base-name>messages</base-name>
 			<var>msgs</var>
 		</resource-bundle>
-		
-		<message-bundle>validationMsgs</message-bundle>		
+
+		<message-bundle>validationMsgs</message-bundle>
 	</application>
-	
+
 	<lifecycle>
 		<phase-listener>com.jvs.jsf.utils.DepurationListener</phase-listener>
-	</lifecycle>	
+	</lifecycle>
 
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>homePage</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 	<navigation-rule>
 		<from-view-id>/pages/NavigationSample/home.xhtml</from-view-id>
@@ -36,6 +44,6 @@
 			<from-outcome>page</from-outcome>
 			<to-view-id>/pages/NavigationSample/page2.xhtml</to-view-id>
 		</navigation-case>
-	</navigation-rule>	
-	
+	</navigation-rule>
+
 </faces-config>

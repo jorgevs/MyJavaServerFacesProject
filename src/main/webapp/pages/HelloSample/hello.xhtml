@@ -22,10 +22,8 @@
 		<h:commandButton value="Welcome Me" action="welcome" />
 	</h:form>	
 	
-	<h:form>
-		<br /><br />
-		<h:commandLink value="return to initial home" action="#{globalNavigation.returnHome}" />
-	</h:form>
+	<br /><br />
+	<h:link value="return to initial home" outcome="homePage" />
 	
 </f:view>
 </h:body>
