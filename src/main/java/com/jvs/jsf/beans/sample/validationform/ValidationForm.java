@@ -21,7 +21,7 @@ public class ValidationForm {
 	private String hidden = "day";
 
 	public String send() {
-		return "/success";
+		return "/pages/ValidationFormSample/success";
 	}
 
 	public String getName() {

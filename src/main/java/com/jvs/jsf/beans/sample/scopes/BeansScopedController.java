@@ -1,12 +1,14 @@
 package com.jvs.jsf.beans.sample.scopes;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ActionEvent;
 
 @ManagedBean(name = "beansScopedController")
 @SessionScoped
-public class BeansScopedController {
+public class BeansScopedController implements Serializable {
 
 	/**
 	 * 
