@@ -15,9 +15,6 @@
 		<level value="info" />
 	</logger>
 	
-	<logger name="com.jvs.beans.sample">
-		<level value="info" />
-	</logger>	
 	
 	<!-- Root Logger -->
 	<root>

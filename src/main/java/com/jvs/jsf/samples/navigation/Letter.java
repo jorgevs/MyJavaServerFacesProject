@@ -27,5 +27,4 @@ public class Letter {
 	public void setMessageBean(Message message) {
 		this.messageBean = message;
 	}
-
 }

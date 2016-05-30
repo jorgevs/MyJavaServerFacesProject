@@ -55,6 +55,14 @@
 		<h:commandButton action="page1?faces-redirect=true" value="Page1" />
 	</h:form>
 	
+	<br />
+	<h2>Action that receives a parameter</h2>
+	<hr />
+	<h:form>
+		<h3>Receive a parameter</h3>
+		<h:commandButton action="#{navigationController.actionWithParam(2)}" value="sendParamToAction" />
+	</h:form>	
+	
 	<br /><br />
 	<h:link value="return to initial home" outcome="homePage" />
 

@@ -15,7 +15,7 @@ public class BeansScopedController implements Serializable {
 	 * @param event
 	 */
 	public void changeValues(ActionEvent event) {
-		//System.out.println("Stored values in each ModelBean\n");
+		System.out.println("Stored values in each ModelBean\n");
 	}
 
 	/**

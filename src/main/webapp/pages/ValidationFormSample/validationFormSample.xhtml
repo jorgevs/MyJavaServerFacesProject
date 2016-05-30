@@ -25,7 +25,7 @@
 							<td><h:message for="name" /></td>
 						</tr>
 						<tr>
-							<td>Last name: <h:inputText id="lastName" value="#{validationForm.lastName}" required="true" /></td>
+							<td>Last name: <h:inputText id="lastName" value="#{validationForm.lastName}" /></td>
 							<td><h:message for="lastName" /></td>
 						</tr>
 						<tr>
@@ -37,7 +37,9 @@
 							<td><h:message for="phoneNumber" /></td>
 						</tr>
 						<tr>
-							<td>Address: <h:inputText id="address" value="#{validationForm.address}" /></td>
+							<td>Address: 
+								<h:inputText id="address" validator="#{validationForm.validateAddress}" value="#{validationForm.address}" />
+							</td>
 							<td><h:message for="address" /></td>
 						</tr>						
 						<tr>
@@ -58,31 +60,91 @@
 							<td><h:message for="birthDate" /></td>
 						</tr>
 						<tr>
-							<td>Comments: <h:inputTextarea rows="3" cols="20" id="comments" value="#{validationForm.comments}" /></td>
-							<td><h:message for="comments" /></td>
+							<td>					
+								<h:selectOneListbox id="selectedMonth" value="#{validationForm.selectedMonth}" >
+									<f:selectItem itemValue="1" itemLabel="January" />
+									<f:selectItem itemValue="2" itemLabel="February" />
+									<f:selectItem itemValue="3" itemLabel="March" />
+									<f:selectItem itemValue="4" itemLabel="April" />
+									<f:selectItem itemValue="5" itemLabel="May" />
+									<f:selectItem itemValue="6" itemLabel="June" />
+									<f:selectItem itemValue="7" itemLabel="July" />
+									<f:selectItem itemValue="8" itemLabel="August" />
+									<f:selectItem itemValue="9" itemLabel="September" />
+									<f:selectItem itemValue="10" itemLabel="October" />
+									<f:selectItem itemValue="11" itemLabel="November" />
+									<f:selectItem itemValue="12" itemLabel="December" />
+								</h:selectOneListbox>
+							</td>						
+							<td>
+								<h:selectManyListbox id="selectedSports" value="#{validationForm.selectedSports}" >
+									<f:selectItem itemValue="1" itemLabel="Footbal" />
+									<f:selectItem itemValue="2" itemLabel="Soccer" />
+									<f:selectItem itemValue="3" itemLabel="Swimming" />
+									<f:selectItem itemValue="4" itemLabel="Box" />
+									<f:selectItem itemValue="5" itemLabel="Jogging" />
+								</h:selectManyListbox>							
+							</td>
 						</tr>
+						<tr>							
+							<td>
+								<h:selectOneRadio id="selectedGender" value="#{validationForm.selectedGender}" >
+									<f:selectItem itemValue="1" itemLabel="Male" />
+									<f:selectItem itemValue="2" itemLabel="Female" />
+								</h:selectOneRadio>
+							</td>
+							<td>
+								<h:selectManyCheckbox id="selectedPeople" value="#{validationForm.selectedPeople}" >
+									<f:selectItem itemValue="1" itemLabel="Didier" />
+									<f:selectItem itemValue="2" itemLabel="Silvia" />
+									<f:selectItem itemValue="3" itemLabel="Miguel" />
+									<f:selectItem itemValue="4" itemLabel="Luis" />
+									<f:selectItem itemValue="5" itemLabel="Eduardo" />
+								</h:selectManyCheckbox>
+							</td>							
+						</tr>						
 						<tr>
 							<td>Hidden: <h:inputHidden id="hidden" value="#{validationForm.hidden}" /></td>
 							<td><h:graphicImage url="#{resource['images/USA.jpg']}" height="20%" width="20%" /></td>
 						</tr>
-						
+						<tr>							
+							<td>
+								<h:selectOneMenu id="selectedMenu" value="#{validationForm.selectedMenu}" >
+									<f:selectItem itemValue="1" itemLabel="menu1" />
+									<f:selectItem itemValue="2" itemLabel="menu2" />
+									<f:selectItem itemValue="3" itemLabel="menu3" />
+									<f:selectItem itemValue="4" itemLabel="menu4" />
+									<f:selectItem itemValue="5" itemLabel="menu5" />
+								</h:selectOneMenu>
+							</td>
+							<td>
+								<h:selectManyMenu id="selectedMenus" value="#{validationForm.selectedMenus}" >
+									<f:selectItem itemValue="1" itemLabel="menu1" />
+									<f:selectItem itemValue="2" itemLabel="menu2" />
+									<f:selectItem itemValue="3" itemLabel="menu3" />
+									<f:selectItem itemValue="4" itemLabel="menu4" />
+									<f:selectItem itemValue="5" itemLabel="menu5" />
+								</h:selectManyMenu>
+							</td>							
+						</tr>							
 						<tr>
-							<td>Output format: <h:outputFormat id="output" value="{0} was a good {1}" >
+							<td>Adult: <h:selectBooleanCheckbox id="adult" value="#{validationForm.adult}" /></td>
+							<td>Comments: <h:inputTextarea rows="3" cols="20" id="comments" value="#{validationForm.comments}" /></td>
+						</tr>						
+						<tr>
+							<td>Output format: <h:outputFormat id="outputFormat" value="{0} was a good {1}" >
 								<f:param value="#{validationForm.birthDate}" />
 								<f:param value="#{validationForm.hidden}" />
 							</h:outputFormat>
 							</td>
-							<td><h:message for="output" /></td>
+							<td><h:outputLink id="gotoGoogle" value="http://google.com">Goto google</h:outputLink></td>
 						</tr>													
 					</tbody>			
 				</table>
 				
 				<br />
 				<h:commandButton action="#{validationForm.send}" value="Send" />
-			</h:form>
-			
-			<br /><br />
-			<h:outputLink value="http://google.com">Goto google</h:outputLink>
+			</h:form>			
 			
 			<br /><br />
 			<h:link value="return to initial home" outcome="homePage" />

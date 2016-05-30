@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core" 
 	xmlns:h="http://java.sun.com/jsf/html">
 	
@@ -13,25 +14,43 @@
 	
 	<h:form>
 		Information submitted:
-		<hr />
-		#{validationForm.name}
+		<hr />			
+		Name: #{validationForm.name}<br />
+		LastName: #{validationForm.lastName}<br />
+		Age: #{validationForm.age}<br />
+		Phone number: #{validationForm.phoneNumber}<br />
+		Address: #{validationForm.address}<br />
+		email: #{validationForm.email}<br />
+		password: #{validationForm.password}<br />
+		Birth date: #{validationForm.birthDate}<br />
+		Comments: #{validationForm.comments}<br />
+		Hidden: #{validationForm.hidden}<br />
+		Adult: #{validationForm.adult}<br />
+		Selected people: 
+		<ui:repeat var="i" value="#{validationForm.selectedPeople}" varStatus="index">
+			#{validationForm.selectedPeople[1]}
+		</ui:repeat>
 		<br />
-		#{validationForm.lastName}
+		Gender: #{validationForm.selectedGender}<br />
+		Month: #{validationForm.selectedMonth}<br />
+		Selected sports: 
+		<ui:repeat var="s" value="#{validationForm.selectedSports}">
+			#{s}
+		</ui:repeat>
 		<br />
-		#{validationForm.age}
+		Menu: #{validationForm.selectedMenu}<br />
+		Selected menus: 
+		<ui:repeat var="m" value="#{validationForm.selectedMenus}">
+			#{m}
+		</ui:repeat>
+		<br />		
+				
 		<br />
-		#{validationForm.phoneNumber}
-		<br />
-		#{validationForm.address}
-		<br />
-		#{validationForm.email}
-		<br />
-		#{validationForm.birthDate}
 	</h:form>
 	
 	<h:form>
 		<br /><br />
-		<h:commandLink action="/pages/ValidationsSample/validationsPage" value="Regresar" />
+		<h:commandLink action="validationFormSample" value="Regresar" />
 	</h:form>
 	
 </f:view>

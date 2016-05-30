@@ -56,4 +56,8 @@ public class NavigationController implements Serializable {
 		this.pageId = pageId;
 	}
 
+	public String actionWithParam(int param){
+		System.out.println("Action with a parameter: " + param);
+		return "page" + param;
+	}
 }
